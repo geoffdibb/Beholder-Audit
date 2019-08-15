@@ -1,5 +1,9 @@
 package com.bae.repository;
 
-public interface AuditRequestLogRepository {
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.bae.entity.AuditRequestLog;
+
+public interface AuditRequestLogRepository extends MongoRepository<AuditRequestLog, Long> {
 
 }
