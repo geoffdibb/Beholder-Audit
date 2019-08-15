@@ -1,5 +1,5 @@
 package com.bae.service;
 
-public class AuditRequestLogServiceImpl {
+public class AuditRequestLogServiceImpl implements AuditRequestLogService {
 
 }

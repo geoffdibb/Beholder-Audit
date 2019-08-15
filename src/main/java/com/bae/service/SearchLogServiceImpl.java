@@ -1,5 +1,5 @@
 package com.bae.service;
 
-public class SearchLogServiceImpl {
+public class SearchLogServiceImpl implements SearchLogService {
 
 }
