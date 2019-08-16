@@ -19,7 +19,7 @@ import com.bae.repository.SearchLogRepository;
 
 	@RunWith(SpringRunner.class)
 	@SpringBootTest
-public class SearchLogServiceTest {
+public class SearchLogServiceTest { 
 
 
 		@InjectMocks
@@ -28,8 +28,8 @@ public class SearchLogServiceTest {
 		@Mock
 		SearchLogRepository repository;
 
-		public static SearchLog MOCK_USER_OBJECT = new SearchLog();
-		public static final SearchLog MOCK_USER_OBJECT2 = new SearchLog();
+		public static SearchLog MOCK_USER_OBJECT = new SearchLog(null, 0, null, null);
+		public static final SearchLog MOCK_USER_OBJECT2 = new SearchLog(null, 0, null, null);
 
 		@Test
 		public void getAllUsersTest() {

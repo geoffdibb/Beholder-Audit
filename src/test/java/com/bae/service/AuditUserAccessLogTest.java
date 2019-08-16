@@ -21,13 +21,13 @@ import com.bae.repository.AuditUserAccessLogRepository;
 public class AuditUserAccessLogTest {
 
 	@InjectMocks
-	SearchLogServiceImpl service;
+	AuditUserAccessLogServiceImpl service;
 
 	@Mock
 	AuditUserAccessLogRepository repository;
 
-	public static AuditUserAccessLog MOCK_USER_OBJECT = new AuditUserAccessLog();
-	public static final AuditUserAccessLog MOCK_USER_OBJECT2 = new AuditUserAccessLog();
+	public static AuditUserAccessLog MOCK_USER_OBJECT = new AuditUserAccessLog("blank", 0, null);
+	public static final AuditUserAccessLog MOCK_USER_OBJECT2 = new AuditUserAccessLog("blank", 0, null);
 
 	@Test
 	public void getAllUsersTest() {
@@ -35,7 +35,7 @@ public class AuditUserAccessLogTest {
 		MOCK_USER_ARRAY.add(MOCK_USER_OBJECT);
 		MOCK_USER_ARRAY.add(MOCK_USER_OBJECT2);
 		Mockito.when(repository.findAll()).thenReturn(MOCK_USER_ARRAY);
-		assertEquals(MOCK_USER_ARRAY, service.getAllLogs());
+		assertEquals(MOCK_USER_ARRAY, service.getAllAccessLogs());
 		Mockito.verify(repository).findAll();
 	}
 }
