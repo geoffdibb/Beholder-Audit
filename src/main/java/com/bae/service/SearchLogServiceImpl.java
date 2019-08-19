@@ -22,8 +22,8 @@ public class SearchLogServiceImpl implements SearchLogService {
 
 	@Override
 	public Collection<SearchLog> getSearchLogs() {
-		Collection<SearchLog> newList = repository.findAll();
-		return newList;
+		// Collection<SearchLog> newList = repository.findAll();
+		return repository.findAll();
 	}
 
 	@JmsListener(destination = "Queue", containerFactory = "myFactory")

@@ -21,8 +21,8 @@ public class AuditRequestLogServiceImpl implements AuditRequestLogService {
 
 	@Override
 	public Collection<AuditRequestLog> getAuditRequestLogs() {
-		Collection<AuditRequestLog> newList = repository.findAll();
-		return newList;
+		// Collection<AuditRequestLog> newList = repository.findAll();
+		return repository.findAll();
 	}
 
 	@JmsListener(destination = "Queue", containerFactory = "myFactory")

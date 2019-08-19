@@ -19,7 +19,7 @@ public class SearchLogController {
 		this.service = service;
 	}
 
-	public SearchLogService service;
+	private SearchLogService service;
 
 	@GetMapping("/getSearchLog")
 	public Collection<SearchLog> getSearchLogs() {

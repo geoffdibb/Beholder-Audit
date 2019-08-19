@@ -19,7 +19,7 @@ public class AuditRequestLogController {
 		this.service = service;
 	}
 
-	public AuditRequestLogService service;
+	private AuditRequestLogService service;
 
 	@GetMapping("/getAuditRequestLog")
 	public Collection<AuditRequestLog> getAuditRequestLogs() {
