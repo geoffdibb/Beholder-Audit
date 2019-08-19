@@ -27,8 +27,8 @@ public class AuditUserAccessLogTest {
 	public void getAllUsersTest() {
 		TestConstants.MOCK_AUDIT_USER_ACCESS_ARRAY.add(TestConstants.MOCK_AUDIT_USER_ACCESS_LOG);
 		TestConstants.MOCK_AUDIT_USER_ACCESS_ARRAY.add(TestConstants.MOCK_AUDIT_USER_ACCESS_LOG2);
-		Mockito.when(service.getAllAccessLogs()).thenReturn(TestConstants.MOCK_AUDIT_USER_ACCESS_ARRAY);
-		assertEquals(TestConstants.MOCK_AUDIT_USER_ACCESS_ARRAY, controller.getAllAccessLogs());
-		Mockito.verify(service).getAllAccessLogs();
+		Mockito.when(service.getAuditUserAccessLogs()).thenReturn(TestConstants.MOCK_AUDIT_USER_ACCESS_ARRAY);
+		assertEquals(TestConstants.MOCK_AUDIT_USER_ACCESS_ARRAY, controller.getAuditUserAccessLogs());
+		Mockito.verify(service).getAuditUserAccessLogs();
 	}
 }

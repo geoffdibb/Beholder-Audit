@@ -22,7 +22,7 @@ public class SearchLogController {
 	public SearchLogService service;
 
 	@GetMapping("/getSearchLog")
-	public Collection<SearchLog> getAllLogs() {
-		return service.getAllLogs();
+	public Collection<SearchLog> getSearchLogs() {
+		return service.getSearchLogs();
 	}
 }

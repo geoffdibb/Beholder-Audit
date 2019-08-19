@@ -20,7 +20,7 @@ public class AuditRequestLogServiceImpl implements AuditRequestLogService {
 	}
 
 	@Override
-	public Collection<AuditRequestLog> getAllRequestLogs() {
+	public Collection<AuditRequestLog> getAuditRequestLogs() {
 		Collection<AuditRequestLog> newList = repository.findAll();
 		return newList;
 	}

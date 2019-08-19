@@ -27,7 +27,7 @@ public class AuditRequestLogServiceTest {
 		TestConstants.MOCK_AUDIT_REQUEST_LOG_ARRAY.add(TestConstants.MOCK_AUDIT_REQUEST_LOG);
 		TestConstants.MOCK_AUDIT_REQUEST_LOG_ARRAY.add(TestConstants.MOCK_AUDIT_REQUEST_LOG2);
 		Mockito.when(repository.findAll()).thenReturn(TestConstants.MOCK_AUDIT_REQUEST_LOG_ARRAY);
-		assertEquals(TestConstants.MOCK_AUDIT_REQUEST_LOG_ARRAY, service.getAllRequestLogs());
+		assertEquals(TestConstants.MOCK_AUDIT_REQUEST_LOG_ARRAY, service.getAuditRequestLogs());
 		Mockito.verify(repository).findAll();
 	}
 }

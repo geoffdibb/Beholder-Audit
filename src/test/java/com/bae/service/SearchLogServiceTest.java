@@ -28,7 +28,7 @@ public class SearchLogServiceTest {
 		TestConstants.MOCK_SEARCH_LOG_ARRAY.add(TestConstants.MOCK_SEARCH_LOG);
 		TestConstants.MOCK_SEARCH_LOG_ARRAY.add(TestConstants.MOCK_SEARCH_LOG2);
 		Mockito.when(repository.findAll()).thenReturn(TestConstants.MOCK_SEARCH_LOG_ARRAY);
-		assertEquals(TestConstants.MOCK_SEARCH_LOG_ARRAY, service.getAllLogs());
+		assertEquals(TestConstants.MOCK_SEARCH_LOG_ARRAY, service.getSearchLogs());
 		Mockito.verify(repository).findAll();
 	}
 }

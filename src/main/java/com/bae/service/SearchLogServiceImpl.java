@@ -21,7 +21,7 @@ public class SearchLogServiceImpl implements SearchLogService {
 	}
 
 	@Override
-	public Collection<SearchLog> getAllLogs() {
+	public Collection<SearchLog> getSearchLogs() {
 		Collection<SearchLog> newList = repository.findAll();
 		return newList;
 	}

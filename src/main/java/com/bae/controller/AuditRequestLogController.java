@@ -22,8 +22,8 @@ public class AuditRequestLogController {
 	public AuditRequestLogService service;
 
 	@GetMapping("/getAuditRequestLog")
-	public Collection<AuditRequestLog> getAllRequestLogs() {
-		return service.getAllRequestLogs();
+	public Collection<AuditRequestLog> getAuditRequestLogs() {
+		return service.getAuditRequestLogs();
 
 	}
 

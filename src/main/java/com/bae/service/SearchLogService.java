@@ -6,6 +6,6 @@ import com.bae.entity.SearchLog;
 
 public interface SearchLogService {
 
-	Collection<SearchLog> getAllLogs();
+	Collection<SearchLog> getSearchLogs();
 
 }

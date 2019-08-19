@@ -27,8 +27,8 @@ public class SearchLogControllerTest {
 	public void getAllUsersTest() {
 		TestConstants.MOCK_SEARCH_LOG_ARRAY.add(TestConstants.MOCK_SEARCH_LOG);
 		TestConstants.MOCK_SEARCH_LOG_ARRAY.add(TestConstants.MOCK_SEARCH_LOG2);
-		Mockito.when(service.getAllLogs()).thenReturn(TestConstants.MOCK_SEARCH_LOG_ARRAY);
-		assertEquals(TestConstants.MOCK_SEARCH_LOG_ARRAY, controller.getAllLogs());
-		Mockito.verify(service).getAllLogs();
+		Mockito.when(service.getSearchLogs()).thenReturn(TestConstants.MOCK_SEARCH_LOG_ARRAY);
+		assertEquals(TestConstants.MOCK_SEARCH_LOG_ARRAY, controller.getSearchLogs());
+		Mockito.verify(service).getSearchLogs();
 	}
 }

@@ -21,7 +21,7 @@ public class AuditUserAccessLogServiceImpl implements AuditUserAccessLogService 
 	}
 
 	@Override
-	public Collection<AuditUserAccessLog> getAllAccessLogs() {
+	public Collection<AuditUserAccessLog> getAuditUserAccessLogs() {
 		Collection<AuditUserAccessLog> newList = repository.findAll();
 		return newList;
 	}
