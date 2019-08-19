@@ -15,17 +15,12 @@ import org.springframework.jms.support.converter.MessageType;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-public class BeholderCoreApplication {
+public class BeholderAuditApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BeholderCoreApplication.class, args);
+		SpringApplication.run(BeholderAuditApplication.class, args);
 	}
-	
-	@Bean
-	public RestTemplate restTemplate(RestTemplateBuilder builder) {
-		return builder.build();
-	}
-	
+
 	@Bean
 	public JmsListenerContainerFactory<?> myFactory(ConnectionFactory connectionFactory,
 			DefaultJmsListenerContainerFactoryConfigurer configurer) {
@@ -33,7 +28,7 @@ public class BeholderCoreApplication {
 		configurer.configure(factory, connectionFactory);
 		return factory;
 	}
-	
+
 	@Bean
 	public MessageConverter jacksonJmsMessageConverter() {
 		MappingJackson2MessageConverter converter = new MappingJackson2MessageConverter();
@@ -42,4 +37,8 @@ public class BeholderCoreApplication {
 		return converter;
 	}
 
+	@Bean
+	public RestTemplate restTemplate(RestTemplateBuilder builder) {
+		return builder.build();
+	}
 }
