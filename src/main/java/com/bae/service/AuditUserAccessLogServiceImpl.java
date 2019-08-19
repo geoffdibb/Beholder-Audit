@@ -26,7 +26,7 @@ public class AuditUserAccessLogServiceImpl implements AuditUserAccessLogService 
 		return repository.findAll();
 	}
 
-	@JmsListener(destination = "Queue", containerFactory = "myFactory")
+	@JmsListener(destination = "AuditUserAccessQueue", containerFactory = "myFactory")
 	public void sendAuditUserAccessLog(AuditUserAccessLog log) {
 		repository.save(log);
 	}

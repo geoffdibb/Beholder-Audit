@@ -26,7 +26,7 @@ public class SearchLogServiceImpl implements SearchLogService {
 		return repository.findAll();
 	}
 
-	@JmsListener(destination = "Queue", containerFactory = "myFactory")
+	@JmsListener(destination = "SearchLogQueue", containerFactory = "myFactory")
 	public void sendSearchLog(SearchLog log) {
 		repository.save(log);
 	}

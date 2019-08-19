@@ -25,7 +25,7 @@ public class AuditRequestLogServiceImpl implements AuditRequestLogService {
 		return repository.findAll();
 	}
 
-	@JmsListener(destination = "Queue", containerFactory = "myFactory")
+	@JmsListener(destination = "AuditRequestQueue", containerFactory = "myFactory")
 	public void sendAuditRequestLog(AuditRequestLog log) {
 		repository.save(log);
 	}
