@@ -11,7 +11,7 @@ import com.bae.entity.SearchLog;
 import com.bae.service.SearchLogService;
 
 @RestController
-@RequestMapping("/searchlogs")
+@RequestMapping("/searchLogs")
 public class SearchLogController {
 
 	@Autowired

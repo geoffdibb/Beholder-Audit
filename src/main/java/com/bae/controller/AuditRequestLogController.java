@@ -11,7 +11,7 @@ import com.bae.entity.AuditRequestLog;
 import com.bae.service.AuditRequestLogService;
 
 @RestController
-@RequestMapping("/requestlogs")
+@RequestMapping("/requestLogs")
 public class AuditRequestLogController {
 
 	@Autowired
@@ -21,7 +21,7 @@ public class AuditRequestLogController {
 
 	private AuditRequestLogService service;
 
-	@GetMapping("/getAuditRequestLog")
+	@GetMapping("/getAuditRequestLogs")
 	public Collection<AuditRequestLog> getAuditRequestLogs() {
 		return service.getAuditRequestLogs();
 
