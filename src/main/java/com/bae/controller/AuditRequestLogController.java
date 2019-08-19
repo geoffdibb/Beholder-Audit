@@ -11,19 +11,20 @@ import com.bae.entity.AuditRequestLog;
 import com.bae.service.AuditRequestLogService;
 
 @RestController
-@RequestMapping("/requsetlogs")
+@RequestMapping("/requestLogs")
 public class AuditRequestLogController {
 
 	@Autowired
 	public AuditRequestLogController(AuditRequestLogService service) {
-this.service = service;
+		this.service = service;
 	}
-	public AuditRequestLogService service;
-	
-	@GetMapping("/getAll")
-	public Collection<AuditRequestLog> getAllRequestLogs() {
-			return service.getAllRequestLogs();
-			
+
+	private AuditRequestLogService service;
+
+	@GetMapping("/getAuditRequestLogs")
+	public Collection<AuditRequestLog> getAuditRequestLogs() {
+		return service.getAuditRequestLogs();
+
 	}
-	
+
 }
