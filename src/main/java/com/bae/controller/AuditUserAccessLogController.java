@@ -18,11 +18,12 @@ public class AuditUserAccessLogController {
 	public AuditUserAccessLogController(AuditUserAccessLogService service) {
 		this.service = service;
 	}
+
 	public AuditUserAccessLogService service;
-	
-	@GetMapping("/getAll")
-	public Collection<AuditUserAccessLog> GetAllAccessLogs(){
+
+	@GetMapping("/getAuditUserAccessLog")
+	public Collection<AuditUserAccessLog> GetAllAccessLogs() {
 		return service.getAllAccessLogs();
 	}
-	
+
 }

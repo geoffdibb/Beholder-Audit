@@ -11,19 +11,18 @@ import com.bae.entity.SearchLog;
 import com.bae.service.SearchLogService;
 
 @RestController
-	@RequestMapping("/searchlogs")
+@RequestMapping("/searchlogs")
 public class SearchLogController {
 
+	@Autowired
+	public SearchLogController(SearchLogService service) {
+		this.service = service;
+	}
 
-		@Autowired
-		public SearchLogController(SearchLogService service) {
-			this.service = service;
-		}
+	public SearchLogService service;
 
-		public SearchLogService service;
-
-		@GetMapping("/getAll")
-		public Collection<SearchLog> getAllLogs() {
-			return service.getAllLogs();
-		}
+	@GetMapping("/getSearchLog")
+	public Collection<SearchLog> getAllLogs() {
+		return service.getAllLogs();
+	}
 }

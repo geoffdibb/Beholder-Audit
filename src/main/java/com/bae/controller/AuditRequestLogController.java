@@ -16,14 +16,15 @@ public class AuditRequestLogController {
 
 	@Autowired
 	public AuditRequestLogController(AuditRequestLogService service) {
-this.service = service;
+		this.service = service;
 	}
+
 	public AuditRequestLogService service;
-	
-	@GetMapping("/getAll")
+
+	@GetMapping("/getAuditRequestLog")
 	public Collection<AuditRequestLog> getAllRequestLogs() {
-			return service.getAllRequestLogs();
-			
+		return service.getAllRequestLogs();
+
 	}
-	
+
 }
