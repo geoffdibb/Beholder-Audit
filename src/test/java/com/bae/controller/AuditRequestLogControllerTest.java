@@ -2,9 +2,6 @@ package com.bae.controller;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -13,29 +10,24 @@ import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.bae.entity.AuditRequestLog;
-import com.bae.repository.AuditRequestLogRepository;
 import com.bae.service.AuditRequestLogServiceImpl;
+import com.bae.util.TestConstants;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest 
+@SpringBootTest
 public class AuditRequestLogControllerTest {
 	@InjectMocks
-	AuditRequestLogServiceImpl service;
+	AuditRequestLogController controller;
 
 	@Mock
-	AuditRequestLogRepository repository;
-
-	public static AuditRequestLog MOCK_USER_OBJECT = new AuditRequestLog(null, 0, null);
-	public static final AuditRequestLog MOCK_USER_OBJECT2 = new AuditRequestLog(null, 0, null);
+	AuditRequestLogServiceImpl service;
 
 	@Test
 	public void getAllUsersTest() {
-		List<AuditRequestLog> MOCK_USER_ARRAY = new ArrayList<>();
-		MOCK_USER_ARRAY.add(MOCK_USER_OBJECT);
-		MOCK_USER_ARRAY.add(MOCK_USER_OBJECT2);
-		Mockito.when(repository.findAll()).thenReturn(MOCK_USER_ARRAY);
-		assertEquals(MOCK_USER_ARRAY, service.getAllRequestLogs());
-		Mockito.verify(repository).findAll();
+		TestConstants.MOCK_AUDIT_REQUEST_LOG_ARRAY.add(TestConstants.MOCK_AUDIT_REQUEST_LOG);
+		TestConstants.MOCK_AUDIT_REQUEST_LOG_ARRAY.add(TestConstants.MOCK_AUDIT_REQUEST_LOG2);
+		Mockito.when(service.getAllRequestLogs()).thenReturn(TestConstants.MOCK_AUDIT_REQUEST_LOG_ARRAY);
+		assertEquals(TestConstants.MOCK_AUDIT_REQUEST_LOG_ARRAY, controller.getAllRequestLogs());
+		Mockito.verify(service).getAllRequestLogs();
 	}
 }

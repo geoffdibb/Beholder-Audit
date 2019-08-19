@@ -22,7 +22,7 @@ public class AuditUserAccessLogController {
 	public AuditUserAccessLogService service;
 
 	@GetMapping("/getAuditUserAccessLog")
-	public Collection<AuditUserAccessLog> GetAllAccessLogs() {
+	public Collection<AuditUserAccessLog> getAllAccessLogs() {
 		return service.getAllAccessLogs();
 	}
 
