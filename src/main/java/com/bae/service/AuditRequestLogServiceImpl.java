@@ -3,6 +3,7 @@ package com.bae.service;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Service;
 
 import com.bae.entity.AuditRequestLog;
@@ -24,4 +25,8 @@ public class AuditRequestLogServiceImpl implements AuditRequestLogService {
 		return newList;
 	}
 
+	@JmsListener(destination = "Queue", containerFactory = "myFactory")
+	public void receiveAccount(AuditRequestLog log) {
+		repository.save(log);
+	}
 }

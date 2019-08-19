@@ -3,8 +3,10 @@ package com.bae.service;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Service;
 
+import com.bae.entity.AuditRequestLog;
 import com.bae.entity.AuditUserAccessLog;
 import com.bae.repository.AuditUserAccessLogRepository;
 
@@ -27,6 +29,9 @@ public class AuditUserAccessLogServiceImpl implements AuditUserAccessLogService 
 		return newList;
 	}
 	
-
+	@JmsListener(destination = "Queue", containerFactory = "myFactory")
+	public void receiveAccount(AuditUserAccessLog log) {
+		repository.save(log);
+	}
 
 }
