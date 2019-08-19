@@ -22,7 +22,6 @@ public class SearchLogServiceImpl implements SearchLogService {
 
 	@Override
 	public Collection<SearchLog> getSearchLogs() {
-		// Collection<SearchLog> newList = repository.findAll();
 		return repository.findAll();
 	}
 
@@ -30,4 +29,13 @@ public class SearchLogServiceImpl implements SearchLogService {
 	public void sendSearchLog(SearchLog log) {
 		repository.save(log);
 	}
+
+	public SearchLogRepository getRepository() {
+		return repository;
+	}
+
+	public void setRepository(SearchLogRepository repository) {
+		this.repository = repository;
+	}
+
 }

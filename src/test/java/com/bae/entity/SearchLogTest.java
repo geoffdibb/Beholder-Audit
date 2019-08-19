@@ -6,17 +6,54 @@ import org.junit.Test;
 
 public class SearchLogTest {
 
+	private SearchLog account = new SearchLog("Zilla", 1, "Gilla", null);
+
 	@Test
-	public void searchLogTest() {
-		SearchLog searchLog = new SearchLog(null, 0, null, null);
+	public void testGetterName() {
 
-		searchLog.setSearchTerm("newSearch");
-		searchLog.setId(1);
-		searchLog.setUsername("username");
+		assertEquals(account.getUsername(), "Zilla");
+	}
 
-		assertEquals(1, searchLog.getId());
-		assertEquals("newSearch", searchLog.getSearchTerm());
-		assertEquals("username", searchLog.getUsername());
+	@Test
+	public void testSetterName() {
+		account.setUsername("Zilla2");
+		assertEquals(account.getUsername(), "Zilla2");
+	}
+
+	@Test
+	public void testGetterTerm() {
+
+		assertEquals(account.getSearchTerm(), "Gilla");
+	}
+
+	@Test
+	public void testSetterTerm() {
+		account.setSearchTerm("Gilla2");
+		assertEquals(account.getSearchTerm(), "Gilla2");
+	}
+
+	@Test
+	public void testGetterId() {
+
+		assertEquals(account.getId(), 1);
+	}
+
+	@Test
+	public void testSetterId() {
+		account.setId(2);
+		assertEquals(account.getId(), 2);
+	}
+
+	@Test
+	public void testGetterdate() {
+
+		assertEquals(account.getDate(), null);
+	}
+
+	@Test
+	public void testSetterdate() {
+		account.setDate(null);
+		assertEquals(account.getDate(), null);
 	}
 
 }

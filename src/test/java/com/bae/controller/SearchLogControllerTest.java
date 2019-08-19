@@ -18,10 +18,10 @@ import com.bae.util.TestConstants;
 public class SearchLogControllerTest {
 
 	@InjectMocks
-	SearchLogController controller;
+	private SearchLogController controller;
 
 	@Mock
-	SearchLogServiceImpl service;
+	private SearchLogServiceImpl service;
 
 	@Test
 	public void getAllUsersTest() {

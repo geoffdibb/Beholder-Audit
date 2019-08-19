@@ -11,19 +11,27 @@ import com.bae.entity.AuditUserAccessLog;
 import com.bae.service.AuditUserAccessLogService;
 
 @RestController
-@RequestMapping("/accessLogs")
+@RequestMapping("${path.accessLogs}")
 public class AuditUserAccessLogController {
+
+	private AuditUserAccessLogService service;
 
 	@Autowired
 	public AuditUserAccessLogController(AuditUserAccessLogService service) {
 		this.service = service;
 	}
 
-	private AuditUserAccessLogService service;
-
-	@GetMapping("/getAuditUserAccessLogs")
+	@GetMapping("${path.getAuditUserAccessLogs}")
 	public Collection<AuditUserAccessLog> getAuditUserAccessLogs() {
 		return service.getAuditUserAccessLogs();
+	}
+
+	public AuditUserAccessLogService getService() {
+		return service;
+	}
+
+	public void setService(AuditUserAccessLogService service) {
+		this.service = service;
 	}
 
 }
