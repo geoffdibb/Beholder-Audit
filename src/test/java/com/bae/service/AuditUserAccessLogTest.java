@@ -18,10 +18,10 @@ import com.bae.util.TestConstants;
 public class AuditUserAccessLogTest {
 
 	@InjectMocks
-	AuditUserAccessLogServiceImpl service;
+	private AuditUserAccessLogServiceImpl service;
 
 	@Mock
-	AuditUserAccessLogRepository repository;
+	private AuditUserAccessLogRepository repository;
 
 	@Test
 	public void getAllUsersTest() {

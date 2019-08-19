@@ -21,7 +21,6 @@ public class AuditRequestLogServiceImpl implements AuditRequestLogService {
 
 	@Override
 	public Collection<AuditRequestLog> getAuditRequestLogs() {
-		// Collection<AuditRequestLog> newList = repository.findAll();
 		return repository.findAll();
 	}
 
@@ -29,4 +28,13 @@ public class AuditRequestLogServiceImpl implements AuditRequestLogService {
 	public void sendAuditRequestLog(AuditRequestLog log) {
 		repository.save(log);
 	}
+
+	public AuditRequestLogRepository getRepository() {
+		return repository;
+	}
+
+	public void setRepository(AuditRequestLogRepository repository) {
+		this.repository = repository;
+	}
+
 }

@@ -22,13 +22,20 @@ public class AuditUserAccessLogServiceImpl implements AuditUserAccessLogService 
 
 	@Override
 	public Collection<AuditUserAccessLog> getAuditUserAccessLogs() {
-		// Collection<AuditUserAccessLog> newList = repository.findAll();
 		return repository.findAll();
 	}
 
 	@JmsListener(destination = "AuditUserAccessQueue", containerFactory = "myFactory")
 	public void sendAuditUserAccessLog(AuditUserAccessLog log) {
 		repository.save(log);
+	}
+
+	public AuditUserAccessLogRepository getRepository() {
+		return repository;
+	}
+
+	public void setRepository(AuditUserAccessLogRepository repository) {
+		this.repository = repository;
 	}
 
 }

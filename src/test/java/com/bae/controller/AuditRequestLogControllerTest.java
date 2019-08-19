@@ -17,10 +17,10 @@ import com.bae.util.TestConstants;
 @SpringBootTest
 public class AuditRequestLogControllerTest {
 	@InjectMocks
-	AuditRequestLogController controller;
+	private AuditRequestLogController controller;
 
 	@Mock
-	AuditRequestLogServiceImpl service;
+	private AuditRequestLogServiceImpl service;
 
 	@Test
 	public void getAllUsersTest() {
