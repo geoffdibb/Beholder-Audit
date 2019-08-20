@@ -30,4 +30,19 @@ public class AuditRequestLogServiceTest {
 		assertEquals(TestConstants.MOCK_AUDIT_REQUEST_LOG_ARRAY, service.getAuditRequestLogs());
 		Mockito.verify(repository).findAll();
 	}
+
+	@Test
+	public void sendAuditRequestLogTest() {
+		Mockito.when(repository.save(TestConstants.MOCK_AUDIT_REQUEST_LOG))
+				.thenReturn(TestConstants.MOCK_AUDIT_REQUEST_LOG);
+		assertEquals("{\"message\": \"audit request log successfully saved\"}",
+				service.sendAuditRequestLog(TestConstants.MOCK_AUDIT_REQUEST_LOG));
+		Mockito.verify(repository).save(TestConstants.MOCK_AUDIT_REQUEST_LOG);
+	}
+
+	@Test
+	public void getRepositoryTest() {
+		AuditRequestLogRepository AuditRequestLogRepo = repository;
+		assertEquals(AuditRequestLogRepo, service.getRepository());
+	}
 }
