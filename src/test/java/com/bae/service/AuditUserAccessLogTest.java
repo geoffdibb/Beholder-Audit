@@ -31,4 +31,13 @@ public class AuditUserAccessLogTest {
 		assertEquals(TestConstants.MOCK_AUDIT_USER_ACCESS_ARRAY, service.getAuditUserAccessLogs());
 		Mockito.verify(repository).findAll();
 	}
+
+	@Test
+	public void sendAuditUserAccessLogTest() {
+		Mockito.when(repository.save(TestConstants.MOCK_AUDIT_USER_ACCESS_LOG))
+				.thenReturn(TestConstants.MOCK_AUDIT_USER_ACCESS_LOG);
+		assertEquals("{\"message\": \"audit access log successfully saved\"}",
+				service.sendAuditUserAccessLog(TestConstants.MOCK_AUDIT_USER_ACCESS_LOG));
+		Mockito.verify(repository).save(TestConstants.MOCK_AUDIT_USER_ACCESS_LOG);
+	}
 }
