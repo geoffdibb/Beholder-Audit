@@ -10,6 +10,7 @@ import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.bae.service.SearchLogService;
 import com.bae.service.SearchLogServiceImpl;
 import com.bae.util.TestConstants;
 
@@ -30,5 +31,11 @@ public class SearchLogControllerTest {
 		Mockito.when(service.getSearchLogs()).thenReturn(TestConstants.MOCK_SEARCH_LOG_ARRAY);
 		assertEquals(TestConstants.MOCK_SEARCH_LOG_ARRAY, controller.getSearchLogs());
 		Mockito.verify(service).getSearchLogs();
+	}
+
+	@Test
+	public void getServiceTest() {
+		SearchLogService SearchLogService = service;
+		assertEquals(SearchLogService, controller.getService());
 	}
 }

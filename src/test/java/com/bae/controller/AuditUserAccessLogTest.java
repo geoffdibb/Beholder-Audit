@@ -10,6 +10,7 @@ import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.bae.service.AuditUserAccessLogService;
 import com.bae.service.AuditUserAccessLogServiceImpl;
 import com.bae.util.TestConstants;
 
@@ -30,5 +31,11 @@ public class AuditUserAccessLogTest {
 		Mockito.when(service.getAuditUserAccessLogs()).thenReturn(TestConstants.MOCK_AUDIT_USER_ACCESS_ARRAY);
 		assertEquals(TestConstants.MOCK_AUDIT_USER_ACCESS_ARRAY, controller.getAuditUserAccessLogs());
 		Mockito.verify(service).getAuditUserAccessLogs();
+	}
+
+	@Test
+	public void getServiceTest() {
+		AuditUserAccessLogService AuditUserAccessLogService = service;
+		assertEquals(AuditUserAccessLogService, controller.getService());
 	}
 }

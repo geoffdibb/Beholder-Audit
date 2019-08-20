@@ -40,4 +40,10 @@ public class AuditUserAccessLogTest {
 				service.sendAuditUserAccessLog(TestConstants.MOCK_AUDIT_USER_ACCESS_LOG));
 		Mockito.verify(repository).save(TestConstants.MOCK_AUDIT_USER_ACCESS_LOG);
 	}
+
+	@Test
+	public void getRepositoryTest() {
+		AuditUserAccessLogRepository AuditUserAccessLogRepo = repository;
+		assertEquals(AuditUserAccessLogRepo, service.getRepository());
+	}
 }

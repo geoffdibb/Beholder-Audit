@@ -39,4 +39,10 @@ public class SearchLogServiceTest {
 				service.sendSearchLog(TestConstants.MOCK_SEARCH_LOG));
 		Mockito.verify(repository).save(TestConstants.MOCK_SEARCH_LOG);
 	}
+
+	@Test
+	public void getRepositoryTest() {
+		SearchLogRepository SearchLogRepo = repository;
+		assertEquals(SearchLogRepo, service.getRepository());
+	}
 }

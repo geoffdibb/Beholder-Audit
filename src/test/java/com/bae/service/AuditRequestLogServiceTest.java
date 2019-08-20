@@ -39,4 +39,10 @@ public class AuditRequestLogServiceTest {
 				service.sendAuditRequestLog(TestConstants.MOCK_AUDIT_REQUEST_LOG));
 		Mockito.verify(repository).save(TestConstants.MOCK_AUDIT_REQUEST_LOG);
 	}
+
+	@Test
+	public void getRepositoryTest() {
+		AuditRequestLogRepository AuditRequestLogRepo = repository;
+		assertEquals(AuditRequestLogRepo, service.getRepository());
+	}
 }
