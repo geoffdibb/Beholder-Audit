@@ -26,9 +26,8 @@ public class SearchLogServiceImpl implements SearchLogService {
 	}
 
 	@JmsListener(destination = "SearchLogQueue", containerFactory = "myFactory")
-	public String sendSearchLog(SearchLog log) {
+	public void sendSearchLog(SearchLog log) {
 		repository.save(log);
-		return "{\"message\": \"search log successfully saved\"}";
 	}
 
 	public SearchLogRepository getRepository() {
