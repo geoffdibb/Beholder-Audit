@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class AuditRequestLogTest {
 
-	private AuditRequestLog account = new AuditRequestLog("auditUser", 1, null);
+	private AuditRequestLog account = new AuditRequestLog("auditUser", null);
 
 	@Test
 	public void testGetterName() {
@@ -20,17 +20,17 @@ public class AuditRequestLogTest {
 		assertEquals("auditUser2", account.getUsername());
 	}
 
-	@Test
-	public void testGetterId() {
-
-		assertEquals(1, account.getId());
-	}
-
-	@Test
-	public void testSetterId() {
-		account.setId(2);
-		assertEquals(2, account.getId());
-	}
+//	@Test
+//	public void testGetterId() {
+//
+//		assertEquals(1, account.getId());
+//	}
+//
+//	@Test
+//	public void testSetterId() {
+//		account.setId(2);
+//		assertEquals(2, account.getId());
+//	}
 
 	@Test
 	public void testGetterdate() {
