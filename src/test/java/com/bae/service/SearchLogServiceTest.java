@@ -32,17 +32,22 @@ public class SearchLogServiceTest {
 		Mockito.verify(repository).findAll();
 	}
 
-	@Test
-	public void sendSearchLogTest() {
-		Mockito.when(repository.save(TestConstants.MOCK_SEARCH_LOG)).thenReturn(TestConstants.MOCK_SEARCH_LOG);
-		assertEquals("{\"message\": \"search log successfully saved\"}",
-				service.sendSearchLog(TestConstants.MOCK_SEARCH_LOG));
-		Mockito.verify(repository).save(TestConstants.MOCK_SEARCH_LOG);
-	}
+//	@Test
+//	public void sendSearchLogTest() {
+//		Mockito.when(repository.save(TestConstants.MOCK_SEARCH_LOG)).thenReturn(TestConstants.MOCK_SEARCH_LOG);
+//		assertEquals("{\"message\": \"search log successfully saved\"}",
+//				service.sendSearchLog(TestConstants.MOCK_SEARCH_LOG));
+//		Mockito.verify(repository).save(TestConstants.MOCK_SEARCH_LOG);
+//	}
 
 	@Test
 	public void getRepositoryTest() {
-		SearchLogRepository SearchLogRepo = repository;
-		assertEquals(SearchLogRepo, service.getRepository());
+		assertEquals(repository, service.getRepository());
+	}
+
+	@Test
+	public void setRepositoryTest() {
+		service.setRepository(repository);
+		assertEquals(repository, service.getRepository());
 	}
 }

@@ -25,9 +25,8 @@ public class AuditRequestLogServiceImpl implements AuditRequestLogService {
 	}
 
 	@JmsListener(destination = "AuditRequestQueue", containerFactory = "myFactory")
-	public String sendAuditRequestLog(AuditRequestLog log) {
+	public void sendAuditRequestLog(AuditRequestLog log) {
 		repository.save(log);
-		return "{\"message\": \"audit request log successfully saved\"}";
 	}
 
 	public AuditRequestLogRepository getRepository() {

@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class SearchLogTest {
 
-	private SearchLog account = new SearchLog("user1", 1, "search term", null);
+	private AuditSearchLog account = new AuditSearchLog("user1", "name", "search term", null);
 
 	@Test
 	public void testGetterName() {
@@ -32,28 +32,29 @@ public class SearchLogTest {
 		assertEquals("search term2", account.getSearchTerm());
 	}
 
-	@Test
-	public void testGetterId() {
+//	@Test
+//	public void testGetterId() {
+//
+//		assertEquals(1, account.getId());
+//	}
+//
+//	@Test
+//	public void testSetterId() {
+//		account.setId(2);
+//		assertEquals(2, account.getId());
+//	}
 
-		assertEquals(1, account.getId());
+	@Test
+	public void testGetterTimeStamp() {
+
+		assertEquals(null, account.getTimeStamp());
 	}
 
 	@Test
-	public void testSetterId() {
-		account.setId(2);
-		assertEquals(2, account.getId());
-	}
-
-	@Test
-	public void testGetterdate() {
-
-		assertEquals(null, account.getDate());
-	}
-
-	@Test
-	public void testSetterdate() {
-		account.setDate(null);
-		assertEquals(null, account.getDate());
+	public void testSetterTimeStamp() {
+		account.setTimeStamp(null);
+		;
+		assertEquals(null, account.getTimeStamp());
 	}
 
 }
