@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bae.entity.SearchLog;
+import com.bae.entity.AuditSearchLog;
 import com.bae.service.SearchLogService;
 
 @RestController
@@ -22,7 +22,7 @@ public class SearchLogController {
 	}
 
 	@GetMapping("${path.getSearchLogs}")
-	public Collection<SearchLog> getSearchLogs() {
+	public Collection<AuditSearchLog> getSearchLogs() {
 		return service.getSearchLogs();
 	}
 

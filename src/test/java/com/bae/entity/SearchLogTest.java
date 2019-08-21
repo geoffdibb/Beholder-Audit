@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class SearchLogTest {
 
-	private SearchLog account = new SearchLog("user1", "search term", null);
+	private AuditSearchLog account = new AuditSearchLog("user1", "search term", null);
 
 	@Test
 	public void testGetterName() {
