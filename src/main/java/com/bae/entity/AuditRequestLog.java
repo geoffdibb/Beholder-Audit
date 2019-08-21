@@ -1,15 +1,15 @@
 package com.bae.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class AuditRequestLog {
 	private String username;
-	private Date date;
+	private Date timeStamp;
 
-	public AuditRequestLog(String username, Date date) {
+	public AuditRequestLog(String username, Date timeStamp) {
 		super();
 		this.username = username;
-		this.date = date;
+		this.timeStamp = timeStamp;
 	}
 
 	public AuditRequestLog() {
@@ -23,11 +23,11 @@ public class AuditRequestLog {
 		this.username = username;
 	}
 
-	public Date getDate() {
-		return date;
+	public Date getTimeStamp() {
+		return timeStamp;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setTimeStamp(Date timeStamp) {
+		this.timeStamp = timeStamp;
 	}
 }

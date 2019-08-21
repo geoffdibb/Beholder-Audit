@@ -1,18 +1,18 @@
 package com.bae.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class SearchLog {
 
 	private String username;
 	private String searchTerm;
-	private Date date;
+	private Date timeStamp;
 
-	public SearchLog(String username, String searchTerm, Date date) {
+	public SearchLog(String username, String searchTerm, Date timeStamp) {
 		super();
 		this.username = username;
 		this.searchTerm = searchTerm;
-		this.date = date;
+		this.timeStamp = timeStamp;
 	}
 
 	public SearchLog() {
@@ -34,11 +34,11 @@ public class SearchLog {
 		this.searchTerm = searchTerm;
 	}
 
-	public Date getDate() {
-		return date;
+	public Date getTimeStamp() {
+		return timeStamp;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setTimeStamp(Date timeStamp) {
+		this.timeStamp = timeStamp;
 	}
 }
