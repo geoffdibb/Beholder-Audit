@@ -28,7 +28,7 @@ public class AuditUserAccessLog {
 		return timeStamp;
 	}
 
-	public void settimeStamp(Date timeStamp) {
+	public void setTimeStamp(Date timeStamp) {
 		this.timeStamp = timeStamp;
 	}
 }

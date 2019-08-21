@@ -33,15 +33,16 @@ public class AuditRequestLogTest {
 //	}
 
 	@Test
-	public void testGetterdate() {
+	public void testGetterTimeStamp() {
 
-		assertEquals(null, account.getDate());
+		assertEquals(null, account.getTimeStamp());
 	}
 
 	@Test
-	public void testSetterdate() {
-		account.setDate(null);
-		assertEquals(null, account.getDate());
+	public void testSetterTimeStamp() {
+		account.setTimeStamp(null);
+		;
+		assertEquals(null, account.getTimeStamp());
 	}
 
 }

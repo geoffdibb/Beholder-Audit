@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class SearchLogTest {
 
-	private AuditSearchLog account = new AuditSearchLog("user1", "search term", null);
+	private AuditSearchLog account = new AuditSearchLog("user1", "name", "search term", null);
 
 	@Test
 	public void testGetterName() {
@@ -45,15 +45,16 @@ public class SearchLogTest {
 //	}
 
 	@Test
-	public void testGetterdate() {
+	public void testGetterTimeStamp() {
 
-		assertEquals(null, account.getDate());
+		assertEquals(null, account.getTimeStamp());
 	}
 
 	@Test
-	public void testSetterdate() {
-		account.setDate(null);
-		assertEquals(null, account.getDate());
+	public void testSetterTimeStamp() {
+		account.setTimeStamp(null);
+		;
+		assertEquals(null, account.getTimeStamp());
 	}
 
 }
